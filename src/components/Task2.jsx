@@ -1,4 +1,5 @@
 import Task1 from "./Task1";
+import "./Task2.css";
 
 const Task2 = (props) => {
   return (

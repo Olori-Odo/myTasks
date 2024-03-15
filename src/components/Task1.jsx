@@ -24,9 +24,13 @@ class Task1 extends Component {
   }
 
   render() {
+    let outCome = [this.state.userInput.length];
+    let thRee = outCome > 10 ? "text is too long" : "text is too short";
+
     return (
       <>
-        <div>
+        <div className="t-1">
+          <h1>TASK 1</h1>
           <label htmlFor="user">inputText</label>
           <input
             onChange={(event) => this.inputChangeHandler(event)}
@@ -34,19 +38,18 @@ class Task1 extends Component {
             id="user"
           />
 
-          <h6> {this.state.userInput.length} </h6>
+          <h6> {outCome} </h6>
         </div>
-
-        <br />
-        <br />
 
         <div className="t-2">
           <h1>TASK 2</h1>
-          <Task2 length={this.state.userInput.length} />
+          <Task2 length={outCome} />
         </div>
 
+        <br />
+
         <div className="t-3">
-          <Task3 />
+          <Task3 result={thRee} />
         </div>
       </>
     );
